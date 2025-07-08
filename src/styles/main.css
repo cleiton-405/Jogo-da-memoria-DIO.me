@@ -1,0 +1,105 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, rgb(9, 160, 9), rgb(18, 18, 218));
+    color: white;
+
+    user-select: none;
+}
+
+@font-face {
+    font-family: animada;
+    src: url("../fonts/Super\ Adorable.ttf");
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    background-image: linear-gradient(325deg, rgb(22, 22, 201) 50%, rgb(15, 170, 15) 50%);
+    padding: 40px 60px;
+
+    border-radius: 10px;
+}
+
+h2{
+    font-family: animada;
+    font-size: 3em;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+}
+
+.reset{
+    padding: 15px 20px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: animada;
+
+    border-radius: 10px;
+}
+
+.reset:focus{
+    color: rgb(255, 255, 255);
+    background-color: gray;
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: gray;
+    /* opacity: 0.85; */
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after, .boxMatch::after{
+    transform: rotateY(180deg);
+}
