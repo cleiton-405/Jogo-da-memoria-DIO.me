@@ -2,6 +2,7 @@
 
 Neste projeto foi desenvolvido um jogo da memória simples junto com o professor, que aborda conceitos como HTML, CSS e Javascript. Objetivo principal é identificar todos os cards de acordo com suas respectivas imagens. 
 
+---
 HTML - Uma div container com um h2, outra div game e um botão onclick que reseta o jogo.
 
 ---
